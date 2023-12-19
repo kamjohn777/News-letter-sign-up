@@ -1,0 +1,132 @@
+:root {
+  --main-bg-color: #36384d;
+  --main-text-color: #333;
+  --main-font-size: 16px;
+  --main-padding: 10px;
+
+  /* Gradient Colors */
+  --red-grad: #ff2752;
+  --lighter-red: #ff414b;
+  --orange-grad: #ff4f30;
+  --darker-orange: #ff683f;
+}
+
+body {
+  background: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main-news-container {
+  background-color: #fff;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  padding: var(--main-padding);
+  width: 800px;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.txt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--main-padding);
+    width: 800px;
+    height: 600px;
+    border-radius: 20px;
+    gap: 16px;
+}
+
+.txt-content h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 55px;
+  margin-bottom: 10px;
+  color: var(--main-text-color);
+}
+
+.icon-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+/* .label-email {
+  position: relative;
+  right: 25%;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#error-message {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+#error-message.active {
+    opacity: 1;
+}
+
+.lbl-p-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+#email {
+  width: 70%;
+  padding: 15px 47px;
+  font-size: 16px;
+  margin: 9px 2px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.subscribe-btn {
+  /* background: linear-gradient(to right, red, orange); */
+  background: linear-gradient(
+    to right,
+    var(--red-grad),
+    var(--lighter-red),
+    var(--orange-grad),
+    var(--darker-orange)
+  );
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.5s ease-in-out, transform 0.5s ease-in-out;
+  /* box-shadow: 2px 3px 20px #c86d12, 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00; */
+  box-shadow: 0 0 20px rgba(255, 127, 0, 0.6), 0 0 30px rgba(255, 127, 0, 0.4);
+}
+
+.subscribe-btn:hover {
+  /* background: linear-gradient(to right, orange, red); */
+  background: linear-gradient(
+    to right,
+    var(--darker-orange),
+    var(--orange-grad),
+    var(--lighter-red),
+    var(--red-grad)
+  );
+  /* box-shadow: 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00, 0 0 25px #ff7f00, 0 0 60px #ff7f00; */
+  box-shadow: 0 0 30px rgba(255, 127, 0, 0.6), 0 0 40px rgba(255, 127, 0, 0.4);
+  transform: scale(1.1);
+}
