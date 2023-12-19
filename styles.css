@@ -130,3 +130,75 @@ form {
   box-shadow: 0 0 30px rgba(255, 127, 0, 0.6), 0 0 40px rgba(255, 127, 0, 0.4);
   transform: scale(1.1);
 }
+
+#success-message {
+    position: absolute;
+    /* transition: opacity 0.5s ease-in-out;
+    opacity: 0; */
+}
+
+#dismiss-btn {
+        /* background: linear-gradient(to right, red, orange); */
+        background: linear-gradient(
+          to right,
+          var(--red-grad),
+          var(--lighter-red),
+          var(--orange-grad),
+          var(--darker-orange)
+        );
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background 0.5s ease-in-out, transform 0.5s ease-in-out;
+        /* box-shadow: 2px 3px 20px #c86d12, 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00; */
+        box-shadow: 0 0 20px rgba(255, 127, 0, 0.6), 0 0 30px rgba(255, 127, 0, 0.4);
+      }
+      
+      #dismiss-btn:hover {
+        /* background: linear-gradient(to right, orange, red); */
+        background: linear-gradient(
+          to right,
+          var(--darker-orange),
+          var(--orange-grad),
+          var(--lighter-red),
+          var(--red-grad)
+        );
+        /* box-shadow: 0 0 10px #ff7f00, 0 0 15px #ff7f00, 0 0 20px #ff7f00, 0 0 25px #ff7f00, 0 0 60px #ff7f00; */
+        box-shadow: 0 0 30px rgba(255, 127, 0, 0.6), 0 0 40px rgba(255, 127, 0, 0.4);
+        transform: scale(1.1);
+      }
+
+
+/* THE TOGGLE HIDE ELEMENTS STYLES */
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 310px;
+    height: 320px;
+    background: #fff;
+    color: var(--main-text-color);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+    transform: translate(-50%, -50%); /* Center the card */
+    border-radius: 10px; /* Optional: Add some border radius to make it look like a card */
+    padding: 20px; /* Optional: Add some padding */
+    box-sizing: border-box; /* Optional: Include padding and border in element's total width and height */
+}

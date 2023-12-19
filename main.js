@@ -4,6 +4,9 @@ document.getElementById('email-form').addEventListener('submit', function (e) {
     var emailInput = document.getElementById('email');
     var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var errorMessage = document.getElementById('error-message');
+    var successMessage = document.getElementById('success-message');
+    var mainNewsContainer = document.querySelector('.main-news-container');
+    const successPTag = document.getElementById('success-p-tag');
 
     if (!pattern.test(emailInput.value)) {
         // Invalid email address
@@ -18,7 +21,21 @@ document.getElementById('email-form').addEventListener('submit', function (e) {
     } else {
         // Valid email address
         errorMessage.textContent = '';
-        emailForm.reset(); // Reset the form
-        emailInput.style.backgroundColor = ''; // Reset the background color
+        successPTag.textContent = 'A confirmation email has been sent to ' + emailInput.value + '. Please open it and click the button inside to confirm your subscription.';
+        mainNewsContainer.classList.add('hide'); // Hide the main news container
+        setTimeout(function() {
+            successMessage.classList.remove('hide'); // Show the success message
+            successMessage.classList.add('show');
+        }, 500); // Show after 0.5 seconds
     }
+});
+
+document.getElementById('dismiss-btn').addEventListener('click', function() {
+    var mainNewsContainer = document.querySelector('.main-news-container');
+    var successMessage = document.getElementById('success-message');
+    successMessage.classList.add('hide'); // Hide the success message
+    successMessage.classList.remove('show');
+    setTimeout(function() {
+        mainNewsContainer.classList.remove('hide'); // Show the main news container
+    }, 500); // Show after 0.5 seconds
 });
